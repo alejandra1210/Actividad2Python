@@ -1,0 +1,90 @@
+import operator
+
+class Vehiculo:
+    def __init__(self,color,ruedas):
+        self.color = color
+        self.ruedas = ruedas
+
+
+    def __str__(self):
+        return "Color {},tiene {} Ruedas".format(self.color,self.ruedas)
+
+
+class Carro(Vehiculo):
+
+    def __init__(self, color, ruedas,velocidad,cilindrada):
+        self.color = color
+        self.ruedas = ruedas
+        self.velocidad = velocidad
+        self.cilindrada =cilindrada
+
+    def __str__(self):
+        return "Color {},tiene {} Ruedas,{} Velocidad, {}  Cilindrada".format(self.color, self.ruedas,self.velocidad,
+                                                                          self.cilindrada)
+
+
+class Bicicleta(Vehiculo):
+    def __init__(self, color, ruedas,tipo):
+        self.color = color
+        self.ruedas = ruedas
+        self.tipodeBici = tipo
+
+    def __str__(self):
+        return "Color {},tiene {} Ruedas,Tipo de Bicicleta {},".format(self.color, self.ruedas, self.tipodeBici)
+
+class Camioneta(Carro):
+
+    def __init__(self, color, ruedas, velocidad, cilindrada,Carga):
+        self.color = color
+        self.ruedas = ruedas
+        self.velocidad = velocidad
+        self.cilindrada = cilindrada
+        self.carga = Carga
+
+    def __str__(self):
+        return "Color {},tiene {} Ruedas,{} Velocidad,{} Cilindrada,Carga {}".format(self.color, self.ruedas, self.velocidad,self.cilindrada,self.carga)
+
+
+class Motocicleta(Bicicleta):
+
+    def __init__(self, color, ruedas,tipo,velocidad,cilindrada):
+        self.color = color
+        self.ruedas = ruedas
+        self.tipodeBici = tipo
+        self.velocidad = velocidad
+        self.cilindrada = cilindrada
+
+    def __str__(self):
+        return "Color {},tiene {} Ruedas,Tipo de Bicicleta {},velocidad {},cilindrada {}".format(self.color, self.ruedas, self.tipodeBici, self.velocidad, self.cilindrada)
+
+Vehiculo1 = Vehiculo("Negro",4)
+print("Vehiculo 1: "+str(Vehiculo1))
+
+Bici = Bicicleta("Azul",2,"Todo terreno")
+print("Bici: "+str(Bici))
+
+Camioneta1 = Camioneta("Gris",4,22,56,700)
+print("Camineta: "+str(Camioneta1))
+
+Moto = Motocicleta("Rojo",2,"Suzuki",50,33)
+print("Moto: "+str(Moto))
+
+Carro1 = Carro("Blanco",4,33,55)
+print("Carro: "+str(Carro1))
+
+vehiculos =[Vehiculo1,Bici,Camioneta1,Moto,Carro1]
+
+
+def Catalogar(vehiculos, ruedas = 4):
+    cont = 0
+    for vehiculo in vehiculos:
+        if ruedas == vehiculo.ruedas:
+            print(vehiculo.__dict__)
+            cont = cont + 1
+
+    print("Se han encontrado {} vehículos con {} ruedas:".format(cont,ruedas))
+
+resultado = Catalogar(vehiculos)
+
+
+

@@ -1,0 +1,99 @@
+from random import  randint
+class Persona:
+
+
+    def __init__(self,nombre,edad,DNI,sexo,peso,altura):
+        self.nombre = nombre
+        self.edad = edad
+        self.DNI =  self.generador_de_DNI()
+        self.sexo = sexo
+        self.peso = peso
+        self.altura = altura
+
+
+
+    def Constructor_defecto(self,):
+         self.nombre = ''
+         self.edad = 0
+         self.DNI = 0
+         self.sexo = 'hombre'
+         self.peso = 0
+         self.altura = 0
+
+    def  Constructor_dos(self,nombre, edad,sexo,DNI = 0,peso = 0, altura = 0):
+         self.nombre = nombre
+         self.edad = edad
+         self.sexo = sexo
+         self.DNI = DNI
+         self.peso = peso
+         self.altura = altura
+
+    def __str__(self):
+       return "Nombre {},edad {} ,DNI {},sexo {},peso {}, altura {}".format(self.nombre, self.edad, self.DNI,self.sexo,self.peso,self.altura)
+
+
+    def getsexo(self,):
+        return self.sexo
+
+    def setnombre(self,nuevo_nombre):
+        self.nombre = nuevo_nombre
+
+    def setedad(self,nuevaEdad):
+        self.edad = nuevaEdad
+
+    def setsexo(self,nuevosexo):
+        self.sexo = nuevosexo
+
+    def setpeso(self,nuevopeso):
+        self.peso = nuevopeso
+
+    def setaltura(self,nuevaAltura):
+        self.altura = nuevaAltura
+
+    def generador_de_DNI(self):
+        lista = []
+        for x in range(8):
+            a = randint(0, 9)
+            lista.append(str(a)) 
+
+        valor = ''
+        for x in range(8):
+            valor = valor + lista[x]
+
+
+        return valor
+
+
+
+    def compraboarsexo(self,sexo):
+        if sexo =='M' or sexo =='H':
+            self.setsexo(sexo)
+        else:
+            self.setsexo('H')
+
+
+
+    def mayor_de_edad(self,edad):
+        if edad >=18:
+           print(True)
+        else:
+         print(False)
+
+
+
+
+
+
+
+
+
+
+persona_1=Persona('Sara',12,23445566,'M',45,1.20)
+
+print(str(persona_1))
+persona_1.generador_de_DNI()
+persona_1.mayor_de_edad(12)
+
+
+
+

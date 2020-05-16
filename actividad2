@@ -1,0 +1,91 @@
+class Cuenta:
+
+
+
+    def __init__(self,cedula, nombre, fecha,cantidad = 0):
+        self.cedula_titular = cedula
+        self.nombre_titular = nombre
+        self.fecha = fecha
+        self.Cantidad = cantidad
+
+
+
+
+    def __str__(self):
+        cadena = self.cedula_titular+","+self.nombre_titular+","+self.fecha+","+self.Cantidad
+        return cadena
+
+
+    def getcedula_titular(self):
+        return self.cedula_titular
+    def getnombre(self):
+        return self.nombre_titular
+    def getfecha(self):
+        return self.fecha
+    def getcantidad(self):
+        return self.Cantidad
+    def setcedula_titular(self,nueva_cedula):
+        self.cedula_titular = nueva_cedula
+    def setnombre(self,nueva_nombre):
+        self.nombre_titular = nueva_nombre
+    def setfecha(self,nueva_fecha):
+        self.fecha = nueva_fecha
+
+    def setcantidad(self, nueva_cantidad):
+        self.Cantidad = nueva_cantidad
+
+
+
+
+    def ingresecantidad(self,n_cantidad):
+        if (n_cantidad  > 0) :
+            total1 = self.getcantidad()
+            total2 = total1 + n_cantidad
+            self.setcantidad(total2)
+            print(total2)
+
+
+        else:
+            print("No se realiza ningun  ingreso ")
+
+    def retirarcantidad(self,n_cantidad):
+            total1 = self.getcantidad()
+            total2 = total1 - n_cantidad
+
+            if(total2 > 0):
+                print("puede retirar:" + str(total2))
+                self.setcantidad(total2)
+            else:
+             print("No puede retirar toda la cantidad, la cantidad que puede retirar es:  " + str(total2))
+
+
+
+
+
+
+
+
+
+
+cedula_titular = int(input("Ingrse cedula del titular"))
+nombre_titular = input("Nombre del titular")
+fecha = input("Ingrese fecha con el siguiente formato mes- dia- año")
+
+cantidad = int(input("Ingresse la cantida"))
+Cuenta1 = Cuenta(cedula_titular,nombre_titular,fecha,cantidad)
+
+
+
+
+ingresar = int(input("Cuanto valor desea ingresar"))
+Cuenta1.ingresecantidad(ingresar)
+
+retirar = int(input("Cuanto valor desea retirar"))
+Cuenta1.retirarcantidad(retirar)
+
+
+
+
+
+
+

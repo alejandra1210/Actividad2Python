@@ -1,0 +1,47 @@
+class Contador:
+
+
+
+     def __init__(self,contador = 0 ):
+         self.contador = contador
+
+
+
+     def __str__(self):
+          return '{}{}'.format(self.contador)
+
+
+
+     def getcontador(self):
+         return self.contador
+
+     def setcontador(self,contador):
+         self.contador = contador
+
+
+     def aumenatarcontador(self,n_aumento):
+          total1 =  self.getcontador()
+          total2 = total1 + n_aumento
+          self.setcontador(total2)
+          print(total2)
+
+
+     def disminuircontador(self,n_disminuir):
+          total1 = self.getcontador()
+          total2 = total1 - n_disminuir
+          self.setcontador(total2)
+          print(total2)
+
+
+
+
+#respuesta = int(input("Ingrse el numero para inicar el contador "))
+respuesta = 1
+contador1 = Contador(respuesta)
+
+contador1.aumenatarcontador(1)
+contador1.disminuircontador(1)
+
+contador2 = Contador()
+print(str(contador2.aumenatarcontador(3)))
+print(str(contador2.disminuircontador(1)))
