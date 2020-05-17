@@ -12,9 +12,9 @@ class Cuenta:
 
 
     def __str__(self):
-        cadena = self.cedula_titular+","+self.nombre_titular+","+self.fecha+","+self.Cantidad
-        return cadena
-
+        return 'Cedula titular {},Nombre titular {},fecha {}, Cantidad   {}'.format(self.cedula_titular,
+                                                                                    self.nombre_titular, self.fecha,
+                                                                                    self.Cantidad)
 
     def getcedula_titular(self):
         return self.cedula_titular
@@ -74,7 +74,7 @@ fecha = input("Ingrese fecha con el siguiente formato mes- dia- año")
 cantidad = int(input("Ingresse la cantida"))
 Cuenta1 = Cuenta(cedula_titular,nombre_titular,fecha,cantidad)
 
-
+#print(str(Cuenta1))
 
 
 ingresar = int(input("Cuanto valor desea ingresar"))

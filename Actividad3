@@ -63,6 +63,19 @@ class Persona:
 
         return valor
 
+    def Calcularimc(self,peso,altura):
+        resultado1 = altura * altura
+        resultado2 = peso /resultado1
+        if resultado2 < 20:
+            total = -1
+
+        elif (resultado2 >= 20) & (resultado2  <= 25):
+            total = 0
+        else:
+            total = 1
+        return  total
+
+
 
 
     def compraboarsexo(self,sexo):
@@ -82,15 +95,20 @@ class Persona:
 
 
 
+Nombre = input("Ingrese nombre completo")
+edad = int(input("Ingrese edad"))
+sexo = int(input("Ingrese Sexo de la persona H o M"))
+DNI = int(input("Ingrese el DNI"))
+Peso = int(input("Ingrese el peso"))
+altura = int(input("Ingrese Sexo de la persona H o M"))
 
 
 
 
 
-
-persona_1=Persona('Sara',12,23445566,'M',45,1.20)
-
+persona_1=Persona(Nombre,edad,sexo,DNI,Peso,altura)
 print(str(persona_1))
+persona_1.Calcularimc(Peso,altura)
 persona_1.generador_de_DNI()
 persona_1.mayor_de_edad(12)
 
